@@ -1,11 +1,13 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Axios from "axios";
 import { useGetTokens } from "./useGetToken";
 import { IProduct } from "../models/interfaces";
+import { IShopContext, ShopContext } from "../context/shop-context";
 
 export const useGetProducts = () => {
   const [products, setProducts] = useState<IProduct[]>([]);
   const { headers } = useGetTokens();
+  // const { isAuthenticated } = useContext<IShopContext>(ShopContext);
 
   const fetchProducts = async () => {
     try {
@@ -18,7 +20,9 @@ export const useGetProducts = () => {
     }
   };
   useEffect(() => {
-    fetchProducts();
+    
+      fetchProducts();
+    
   }, []);
   return { products };
 };

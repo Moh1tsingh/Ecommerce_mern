@@ -13,7 +13,7 @@ app.use("/user", UserRouter);
 app.use("/product", productRouter);
 
 mongoose.connect(
-  "mongodb+srv://thakurmohitsingh2003:EcommercePassword@ecommerce.j7dceb5.mongodb.net/ecommerce"
+  "mongodb+srv://ID:PASSWORD@ecommerce.j7dceb5.mongodb.net/ecommerce"
 );
 
 
